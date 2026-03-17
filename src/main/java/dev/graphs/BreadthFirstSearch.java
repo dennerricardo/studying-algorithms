@@ -2,7 +2,7 @@ package dev.graphs;
 
 import java.util.*;
 
-public class DepthFirstSearch {
+public class BreadthFirstSearch {
 
     static Map<String, List<String>> graph = new LinkedHashMap<>();
 
@@ -11,7 +11,7 @@ public class DepthFirstSearch {
         graph.computeIfAbsent(to, k -> new ArrayList<>()).add(from);
     }
 
-    public static List<String> DepthFirstSearch(String Start){
+    public static List<String> breadthFirstSearch(String start){
         List<String> visitOrder  = new ArrayList<>();
         Set<String> visited = new HashSet<>();
         Queue<String> queue = new LinkedList<>();
@@ -19,7 +19,7 @@ public class DepthFirstSearch {
         visited.add(start);
         queue.offer(start);
 
-        System.out.println("=== Depth First Search starting from: " + start + " ===");
+        System.out.println("=== Breadth First Search starting from: " + start + " ===");
 
         while (!queue.isEmpty()){
             String current = queue.poll();
@@ -39,7 +39,9 @@ public class DepthFirstSearch {
     }
 
     public static List<String> shortestPath(String start, String end){
-        if(start.equals(end)) return List.of(start);
+        if(start.equals(end)) {
+            return List.of(start);
+        }
         Map<String, String> parentMap = new HashMap<>();
         Set<String> visited = new HashSet<>();
         Queue<String> queue = new LinkedList<>();
@@ -72,6 +74,14 @@ public class DepthFirstSearch {
         }
 
         return new ArrayList<>();
+    }
+
+    public static void printGraph(){
+        System.out.println("\n === Graph (Adjacency List) ===");
+        for (Map.Entry<String,List<String>> entry : graph.entrySet()){
+            System.out.println(entry.getKey()+ "->"+ entry.getValue());
+        }
+        System.out.println();
     }
 
 }
