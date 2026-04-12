@@ -1,3 +1,9 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+# ---------------------
+.claude/                                                                                                                                                                                                                       5
+# Build output directories
+target/
+# IDE / editor artifacts
+.idea/

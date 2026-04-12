@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p src/main/java/dev/knapsack)",
+      "Bash(mkdir -p target/classes)"
+    ]
+  }
+}
